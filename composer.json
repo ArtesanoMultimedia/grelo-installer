@@ -1,0 +1,27 @@
+{
+    "name": "grelo/installer",
+    "description": "Aplicaci\u0000n de l\u0000nea de comandos de Grelo Framework",
+    "authors": [
+        {
+            "name": "ArtesanoMultimedia",
+            "email": "artesanomultimedia@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.2.9",
+        "ext-zip": "*",
+        "guzzlehttp/guzzle": "^6.0",
+        "symfony/console": "^4.0|^5.0",
+        "symfony/filesystem": "^4.0|^5.0",
+        "symfony/process": "^4.2|^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Grelo\\Installer\\Console\\": "src/"
+        }
+    },
+    "bin": [
+        "bin/grelo"
+    ]
+}
