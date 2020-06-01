@@ -7,7 +7,7 @@
             "email": "artesanomultimedia@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": "^7.2.9",
         "ext-zip": "*",
