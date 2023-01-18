@@ -139,14 +139,14 @@ class NewCommand extends Command
     {
         switch ($version) {
             case 'develop':
-                $filename = 'latest-develop.zip';
+                $filename = 'develop.zip';
                 break;
             case 'master':
-                $filename = 'latest.zip';
+                $filename = 'master.zip';
                 break;
         }
 
-        $response = (new Client)->get('http://artesanomultimedia.com/grelo/' . $filename);
+        $response = (new Client)->get('https://github.com/ArtesanoMultimedia/GreloFramework/archive/refs/heads/' . $filename);
 
         file_put_contents($zipFile, $response->getBody());
 
@@ -167,7 +167,7 @@ class NewCommand extends Command
         $response = $archive->open($zipFile, ZipArchive::CHECKCONS);
 
         if ($response === ZipArchive::ER_NOZIP) {
-            throw new RuntimeException('No se pudo descargar el archivo. Compruebe que puede acceder a: http://artesanomultimedia.com/grelo/latest.zip');
+            throw new RuntimeException('No se pudo descargar el archivo. Compruebe que puede acceder a: https://github.com/ArtesanoMultimedia/GreloFramework/archive/refs/heads/master.zip');
         }
 
         $archive->extractTo($directory);
